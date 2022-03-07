@@ -2,14 +2,21 @@ package com.apirest.bookshop.common;
 
 public class common {
     public static boolean isNumeric(String strNum) {
-        if (strNum == null) {
-            return false;
-        }
         try {
             Double.parseDouble(strNum);
-        } catch (NumberFormatException nfe) {
+        } catch (Exception e) {
             return false;
         }
+        return true;
+    }
+
+    public static boolean isBoolean(String strBoolean) {
+        try {
+            Boolean.parseBoolean(strBoolean);
+        } catch (Exception e) {
+            return false;
+        }
+
         return true;
     }
 }

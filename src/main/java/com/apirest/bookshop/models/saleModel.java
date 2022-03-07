@@ -1,5 +1,7 @@
 package com.apirest.bookshop.models;
 
+import java.time.LocalDate;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -13,18 +15,14 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity
-@Table(name = "books")
-public class bookModel {
+@Table(name = "sales")
+public class saleModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(unique = true, nullable = false)
+    private Long id;
     private Long bookId;
-    @Column(nullable = false)
-    private String title;
-    private String description;
-    @Column(nullable = false)
-    private int stock;
-    @Column(nullable = false)
+    private String customerEmail;
     private float salePrice;
-    private Boolean available;
+    private LocalDate saleDate;
 }

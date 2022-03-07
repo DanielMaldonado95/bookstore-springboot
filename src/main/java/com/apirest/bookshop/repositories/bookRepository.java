@@ -11,4 +11,5 @@ import org.springframework.stereotype.Repository;
 public interface bookRepository extends JpaRepository<bookModel, Long> {
     public Page<bookModel> searchByAvailable(Boolean available, Pageable pageable);
     public Page<bookModel> searchByTitleIgnoreCaseContaining(String String, Pageable pageable);
+    public bookModel searchByBookId(Long bookId);
 }
