@@ -10,5 +10,4 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface saleRepository extends JpaRepository<saleModel, Long> {
     public ArrayList<saleModel> searchAllBySaleDateBetween(LocalDate from, LocalDate to);
-
 }

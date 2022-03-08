@@ -20,6 +20,13 @@ public class likeService {
     @Autowired
     bookRepository bookRepository;
 
+    /**
+     * Save a like in the databse
+     * 
+     * @param like like model
+     * @return return an object type page with the data
+     * @throws Exception return an exception
+     */
     public Map<String, Object> postLike(likeModel like) throws Exception{
         
         Map<String, Object> response = new HashMap<String, Object>();

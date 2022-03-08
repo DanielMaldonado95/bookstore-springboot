@@ -18,6 +18,13 @@ public class saleService {
     @Autowired   
     bookRepository bookRepository;
 
+    /**
+     * Save a sale in the database
+     * 
+     * @param saleModel sale model
+     * @return return an object type page with the data
+     * @throws Exception return an exception
+     */
     public saleModel postSale(saleModel saleModel) throws Exception{
         LocalDate toDay = LocalDate.now();
         bookModel book = this.bookRepository.searchByBookId(saleModel.getBookId());

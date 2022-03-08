@@ -13,9 +13,18 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class transactionService {
+
     @Autowired
     saleRepository saleRepository;
 
+    /**
+     * Get transactions about a book
+     * 
+     * @param bookId book id
+     * @param from initial date
+     * @param to final date
+     * @return return an object type page with the data
+     */
     public Map<String, Object> getTransactions(Long bookId, String from, String to){
         Map<String, Object> response = new HashMap<String, Object>();
         float totalRevenue = 0;

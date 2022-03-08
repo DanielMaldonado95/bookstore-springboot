@@ -5,6 +5,7 @@ import java.util.Map;
 import com.apirest.bookshop.common.common;
 import com.apirest.bookshop.models.bookModel;
 import com.apirest.bookshop.repositories.bookRepository;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -91,10 +92,11 @@ public class bookService {
     }
 
     /**
+     *  Update book in the base
      * 
-     * @param bookId
-     * @param bookMoodel
-     * @throws Exception
+     * @param bookId book id
+     * @param bookMoodel book model
+     * @throws Exception return exception
      */
     public bookModel putBook(Long bookId, bookModel bookMoodel) throws Exception {
         bookModel book = this.repository.searchByBookId(bookId);
@@ -119,10 +121,11 @@ public class bookService {
     }
 
     /**
+     *  Update something about book
      * 
-     * @param bookId
-     * @param bookModel
-     * @throws Exception
+     * @param bookId book id
+     * @param bookModel book model
+     * @throws Exception return exception
      */
     public bookModel patchBook(Long bookId, bookModel bookModel) throws Exception {
         bookModel book = this.repository.searchByBookId(bookId);
@@ -162,9 +165,10 @@ public class bookService {
     }
 
     /**
+     * Delete a book from database
      * 
-     * @param bookId
-     * @throws Exception
+     * @param bookId book id
+     * @throws Exception return exception
      */
     public void deleteBook(Long bookId) throws Exception {
         if (bookId != null && bookId <= 0) {
